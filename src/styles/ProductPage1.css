@@ -1,0 +1,545 @@
+/* General Page Layout */
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.boutique-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 4rem;
+}
+
+/* Navbar Styling - Ensure Fixed Position */
+.top-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Gallery */
+.boutique-products-showcase {
+  padding: 5rem 2rem 2rem;
+  background-color: #f9fafb;
+  flex-grow: 1;
+}
+
+.boutique-section-title{
+  color:#35600f !important;
+}
+/* Grid Layout for Products - Fixed to 4 products per row */
+.boutique-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+  gap: 1.5rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+  .boutique-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .boutique-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .boutique-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual Product Card */
+.boutique-product-item {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 2s ease-out;
+  width: 300px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.boutique-product-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(162, 119, 186, 0.2);
+}
+
+/* Product Link */
+.boutique-product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Product Image */
+.boutique-product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.boutique-product-item:hover .boutique-product-image {
+  transform: scale(1.08);
+}
+
+/* Product Info */
+.boutique-product-details {
+  padding: 1rem;
+}
+
+/* Product Title */
+.boutique-product-name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin: 0.5rem 0;
+}
+
+/* Product Brand */
+.boutique-product-maker {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Product Price */
+.boutique-product-cost {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #68A830;
+  margin: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.boutique-product-item:hover .boutique-product-cost {
+  color:#4e861e;
+}
+
+/* Add to Cart Button */
+.boutique-cart-button {
+  background-color:#68A830;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 85%; /* Adjusted to be relative to container */
+  margin-left: 7.5%; /* Center the button */
+  position: relative;
+  overflow: hidden;
+}
+
+.boutique-cart-button:hover {
+  background-color:#4a821a;
+  transform: scale(1.03);
+}
+
+.boutique-cart-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  opacity: 0;
+}
+
+.boutique-cart-button:hover::after {
+  transform: rotate(45deg) translate(50%, 50%);
+  opacity: 1;
+}
+
+/* Out of Stock Style */
+.sold-out {
+  opacity: 0.6;
+}
+
+.sold-out .boutique-cart-button {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.sold-out .boutique-cart-button:hover {
+  background-color: #ccc;
+  transform: none;
+}
+
+.sold-out .boutique-cart-button::after {
+  display: none;
+}
+
+/* No Products Message */
+.boutique-empty-state {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+/* Error Message */
+.boutique-error-notice {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ef4444;
+}
+
+/* Category dropdown styling enhancements */
+.nav-category-menu {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 5px 0;
+  min-width: 200px;
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.nav-category-option {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-category-option:hover {
+  background-color: #f5f5f5;
+  color:#68A830;
+}
+
+/* Product listing enhancements */
+.boutique-section-title {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-total {
+  font-size: 18px;
+  color: #666;
+  font-weight: normal;
+}
+
+.boutique-empty-container {
+  text-align: center;
+  padding: 40px 20px;
+
+}
+
+.boutique-empty-state {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.empty-message {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Loading and error states styling */
+.loading-state, .error-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 18px;
+  color: #666;
+
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.error-state {
+  color:#68A830;
+}
+
+/* Pulse animation for new items */
+.new-item {
+  position: relative;
+}
+
+.new-item::before {
+  content: "New";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background:#68A830;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1;
+ 
+}
+
+
+/* General responsive adjustments */
+@media screen and (max-width: 768px) {
+  /* Adjust page padding for mobile */
+  .boutique-page-wrapper {
+    padding-top: 100px; /* Account for taller mobile navbar */
+  }
+  
+  /* Product showcase area */
+  .boutique-products-showcase {
+    padding: 1rem 0.75rem 2rem;
+  }
+  
+  /* Section title sizing */
+  .boutique-section-title {
+    font-size: 22px;
+    margin: 15px 0;
+  }
+  
+  .product-total {
+    font-size: 16px;
+  }
+  
+  /* Maintain two products per row */
+  .boutique-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  /* Product item styling */
+  .boutique-product-item {
+    width: 100%;
+    max-width: none;
+  }
+  
+  /* Adjust product image height */
+  .boutique-product-image {
+    height: 150px;
+  }
+  
+  /* Adjust product details */
+  .boutique-product-details {
+    padding: 0.75rem;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.75rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+  }
+  
+  /* Cart button adjustments */
+  .boutique-cart-button {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+  .contact-footer{
+    font-size: 0.70rem;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 576px) {
+  .boutique-page-wrapper {
+    padding-top: 200px; /* Further increased for smaller screens */
+  }
+  
+  /* Maintain two products per row but with tighter spacing */
+  .boutique-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Reduce paddings and margins */
+  .boutique-products-showcase {
+    padding: 0.75rem 0.5rem 1.5rem;
+  }
+  
+  /* Smaller images for better fit */
+  .boutique-product-image {
+    height: 130px;
+  }
+  
+  /* Tighter product details */
+  .boutique-product-details {
+    padding: 0.5rem;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.7rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+  
+  /* More compact button */
+  .boutique-cart-button {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Smaller new item badge */
+  .new-item::before {
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    font-size: 9px;
+  }
+}
+
+/* Very small devices (under 375px) */
+@media screen and (max-width: 375px) {
+  .boutique-page-wrapper {
+    padding-top: 70px;
+}
+  
+  /* Smaller titles */
+  .boutique-section-title {
+    font-size: 20px;
+  }
+  
+  /* Even smaller product elements */
+  .boutique-product-image {
+    height: 110px;
+  }
+  
+  .boutique-product-name {
+    font-size: 0.8rem;
+  }
+  
+  .boutique-product-maker {
+    font-size: 0.65rem;
+  }
+  
+  .boutique-product-cost {
+    font-size: 0.85rem;
+  }
+  
+  /* Minimal padding for very small screens */
+  .boutique-product-details {
+    padding: 0.4rem;
+  }
+  
+  /* Optimize button for tiny screens */
+  .boutique-cart-button {
+    padding: 0.35rem;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Touch-friendly enhancements */
+@media (pointer: coarse) {
+  /* Larger touch targets for mobile */
+  .boutique-cart-button {
+    min-height: 38px; /* Slightly reduced but still touch-friendly */
+  }
+  
+  /* Reduce hover effects that don't work well on touch */
+  .boutique-product-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(162, 119, 186, 0.15);
+  }
+  
+  .boutique-product-item:hover .boutique-product-image {
+    transform: scale(1.03);
+  }
+  
+  /* Add active state for touch feedback */
+  .boutique-cart-button:active {
+    background-color: #8a5da0;
+    transform: scale(0.98);
+  }
+  
+  /* Category options need larger touch targets */
+  .nav-category-option {
+    padding: 12px 15px;
+  }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .boutique-page-wrapper {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Empty and error states */
+@media screen and (max-width: 576px) {
+  .boutique-empty-container {
+    padding: 25px 15px;
+  }
+  
+  .boutique-empty-state {
+    font-size: 18px;
+  }
+  
+  .empty-message {
+    font-size: 14px;
+  }
+  
+  .loading-state, .error-state {
+    height: 250px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,540 @@
+/* Main Navbar Container */
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+.nav-containerrr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 12px 30px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SECTION (LOGO + BRAND NAME) */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.category-toggle-btn{
+  color:#35600f !important;
+}
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: white !important;
+}
+
+.nav-brand {
+  font-size: 20px;
+  font-weight: 400;
+  color:#35600f;
+  margin-left: 0px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* ELEGANT & TRENDY SEARCH BAR */
+.nav-search {
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.nav-search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fc;
+  border: 1px solid transparent;
+  border-radius: 28px;
+  padding: 6px 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.nav-search-wrapper:focus-within {
+  border-color: #e1e5eb;
+  box-shadow: 0 4px 14px rgba(162, 119, 186, 0.08);
+  background-color: white;
+}
+
+.nav-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  width: 100%;
+}
+
+.nav-search-input::placeholder {
+  color: #a0a6b3;
+  font-weight: 300;
+}
+
+.search-icon {
+  color: #68A830;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.nav-search-wrapper:hover .search-icon,
+.nav-search-wrapper:focus-within .search-icon {
+  color: #68A830;
+}
+
+/* RIGHT SECTION (NAVIGATION LINKS & ICONS) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color:#35600f;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-link:hover {
+  color: #68A830;
+}
+
+/* Categories Button */
+.category-toggle-btn {
+  background-color: white !important;
+  border: none !important;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  transition: color 0.3s;
+  display: flex;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 500;
+  align-items: center;
+}
+
+.category-toggle-btn:hover {
+  color: #68A830;
+}
+
+/* ICONS */
+.nav-icon {
+  margin-left: 25px;
+}
+
+.nav-cart-icon{
+  font-size: 22px;
+  cursor: pointer;
+  color:#35600f;
+  transition: color 0.3s;
+  margin-right: 12px;
+}
+
+.nav-profile-iconnn {
+  font-size: 22px;
+  cursor: pointer;
+  color:#35600f;
+  transition: color 0.3s;
+  margin-right: 70px;
+}
+
+.nav-cart-icon:hover,
+.nav-profile-iconnn:hover {
+  color: #68A830;
+}
+
+/* PROFILE SECTION */
+.nav-profile {
+  position: relative !important;
+  margin-left: 25px;
+}
+
+.nav-dropdownnn {
+  position: absolute !important;
+  top: 40px !important;
+  right: 0 !important;
+  background: white !important;
+  color:#35600f !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  width: 150px !important;
+  display: block !important;
+  z-index: 1000 !important;
+  opacity: 1 !important;
+}
+
+.nav-dropdown-itemmm {
+  padding: 12px !important;
+  text-decoration: none !important;
+  color: #35600f !important;
+  font-size: 14px !important;
+  border-bottom: 1px solid #eee !important;
+  transition: background 0.3s !important;
+  cursor: pointer !important;
+  background: white !important;
+}
+.nav-dropdown-itemmm {
+  border: none !important;         /* Removes any border */
+  text-decoration: none !important; /* Removes underline */
+  outline: none !important;        /* Removes focus outline */
+  background: none !important;     /* Optional: removes background if any */
+}
+
+.nav-dropdown-itemmm:hover {
+  background: #f5f5f5 !important;
+}
+
+/* SEARCH RESULTS DROPDOWN */
+.nav-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #f0f0f0;
+}
+
+.nav-search-result-item {
+  padding: 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.nav-search-result-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color:#35600f;
+  transition: all 0.2s ease;
+}
+
+.nav-search-result-link:hover {
+  background-color: #f8fafc;
+}
+
+.search-product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #8696aa;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #68A830;
+}
+
+.nav-no-results {
+  padding: 15px;
+  text-align: center;
+  color: #8696aa;
+}
+
+.nav-show-more {
+  padding: 12px 15px;
+  text-align: center;
+  background-color: #f8fafc;
+  cursor: pointer;
+  font-weight: 500;
+  color:#68A830;
+  margin-top: 4px;
+}
+
+.nav-show-more:hover {
+  background-color: #f0f4f9;
+}
+
+/* CATEGORY DROPDOWN */
+.nav-category-dropdown {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  padding: 8px 0;
+  min-width: 180px;
+  list-style: none;
+  border: 1px solid #f0f0f0;
+}
+
+.nav-category-item {
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.nav-category-item:hover {
+  background-color: #f8fafc;
+  color:#68A830;
+}
+
+.selected-category-title {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  color: #35600f;
+}
+
+/* Loading and Error States */
+.loading-container, .error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-container {
+  color: #e91e63;
+}
+
+/* Mobile Responsiveness for Navbar */
+@media screen and (max-width: 768px) {
+  /* Main container adjustments */
+  .nav-containerrr {
+    padding: 8px 12px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Logo and brand section */
+  .nav-left {
+    width: 100%;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .nav-brand {
+    font-size: 18px;
+    margin-left: 0px;
+  }
+
+  /* Search bar adjustments */
+  .nav-search {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px 0;
+    order: 0;
+    position: relative; /* Ensure position is relative for proper dropdown positioning */
+  }
+
+  .nav-search-wrapper {
+    padding: 2px 12px;
+  }
+
+  .nav-search-input {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  /* Navigation links */
+  .nav-right {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 8px;
+  }
+
+  .nav-link {
+    margin: 2px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Icons sizing and spacing */
+  .nav-cart-icon,
+  .nav-profile-iconnn {
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  .nav-profile-iconnn {
+    margin-right: 3px;
+  }
+
+  /* Dropdown positioning */
+  .nav-dropdownnn {
+    top: 35px !important;
+    right: -50px !important;
+    width: 120px !important;
+  }
+
+  .nav-dropdown-itemmm {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+
+  /* Category dropdown adjustments */
+  .nav-category-dropdown {
+    right: 0;
+    left: auto;
+    min-width: 150px;
+  }
+
+  .category-toggle-btn {
+    font-size: 14px;
+    padding: 1px 4px;
+  }
+  
+  .nav-category-item {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  /* Search results dropdown - Ensure it appears below search bar */
+  .nav-search-results {
+    top: calc(100% + 5px); /* Keep it below the search bar */
+    max-height: 300px;
+  }
+
+  .nav-search-result-link {
+    padding: 10px 15px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .product-category {
+    font-size: 11px;
+  }
+
+  .product-price {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media screen and (max-width: 576px) {
+  /* Compact header for very small screens */
+  .nav-containerrr {
+    padding: 6px 10px;
+  }
+
+  /* Smaller logo */
+  .nav-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Reorganized navigation for better mobile experience */
+  .nav-right {
+
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  /* Search bar positioning - Keep as relative for proper dropdown */
+  .nav-search {
+    position: relative; /* Changed from sticky to relative */
+    background-color: white;
+    padding: 8px;
+    z-index: 999;
+    margin-top: 0px;
+  }
+
+  /* Search results should appear below search bar */
+  .nav-search-results {
+    top: 100%; /* Always place below search bar */
+    bottom: auto; /* Remove bottom positioning */
+    max-height: 250px;
+  }
+
+  /* Smaller and more touch-friendly elements */
+  .nav-search-result-link {
+    padding: 12px;
+  }
+
+  .nav-category-item {
+    padding: 12px;
+  }
+
+  /* Ensure dropdowns are fully visible */
+  .nav-dropdownnn {
+    right: -30px !important;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 375px) {
+  .nav-containerrr {
+    padding: 5px 8px;
+  }
+
+  .nav-brand {
+    font-size: 16px;
+  }
+
+  .nav-right {
+    gap: 3px;
+  }
+
+  /* Make icons more prominent for small touch targets */
+  .nav-cart-icon,
+  .nav-profile-iconnn {
+    font-size: 20px;
+  }
+
+  /* Simplified navigation with only essential items visible */
+  .nav-link:not(:nth-child(1)):not(:nth-child(2)) {
+    display: none;
+  }
+
+  /* Ensure search results still appear below search bar */
+  .nav-search {
+    position: relative;
+  }
+  
+  .nav-search-results {
+    top: 100%;
+    bottom: auto;
+  }
+}
